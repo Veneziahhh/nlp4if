@@ -57,3 +57,5 @@ Finally, we propose a voting mechanism. There are two schemes: `All vote` and `T
 ## Results
 
 After the attempt and optimization, taking Mean F1 Core as the standard, we trained 12 models, some of which far surpassed the best average F1-score of `89.7%` in [Fighting the COVID-19 Infodemic with a Holistic BERT Ensemble](https://aclanthology.org/2021.nlp4if-1.18.pdf), including Roberta-lstm-attn (`91.38%`), xlmRoberta-lstm-attn (`91.09%`), xlmRoberta-lstm-attn-biasedWeight (`90.67%`), xlmRoberta-multihead (`90.49%`), etc., optimized the training result by adopting voting mechanism and reached an ultimate best-vote of `93.54%`.
+![image](https://user-images.githubusercontent.com/58615742/202180798-5829dcea-23a5-4463-b757-15d41bcdd606.png)
+
