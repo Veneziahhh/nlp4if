@@ -14,23 +14,15 @@ The dataset includes Twitter in `English`, `Bulgarian` and `Arabic`.
 
 ###### Example of raw data:
 
- ![image](https://user-images.githubusercontent.com/58615742/202167251-c7fe2c14-ad2c-4ab5-86ab-94a0aa8a2233.png)
+ <img src="https://user-images.githubusercontent.com/58615742/202167251-c7fe2c14-ad2c-4ab5-86ab-94a0aa8a2233.png" alt="image" style="zoom: 67%;" />
 
 
-Because it is the real comment on Twitter, it inevitably contains emoji and URL, which brings some challenges to data preprocessing.
+Because it is the real comment on Twitter, it inevitably contains `emoji` and `URL`, which brings some challenges to data preprocessing.
 
-
-
-² Created a neural network for the training of the automated identifying of a COVID-19 tweet’s binary attribute
-
-² Enhanced the data by keeping labels on different language training datasets and mutual translation in the data preprocessing stage 
-
-² Used Bert, Roberta and XLM-Roberta to build pre-training models
-
-² Utilized both LSTM+Attention and MultiHead Attention mechanisms, the CNN model and the adjustable Loss function in creating the classification models
-
-² Trained 12 models that far surpass the best average F1-score of 89.7%, including Roberta-lstm-attn (91.38%), xlmRoberta-lstm-attn (91.09%), xlmRoberta-lstm-attn-biasedWeight (90.67%), xlmRoberta-multihead (90.49%), etc., optimized the training result by adopting voting mechanism and reached an ultimate best-vote of 93.54%
+Inspired by the design and ideas in [Multi Output Learning using Task Wise Attention for Predicting Binary Properties of Tweets : Shared-Task-On-Fighting the COVID-19 Infodemic](https://aclanthology.org/2021.nlp4if-1.16.pdf) that ranked second in the competition at that time, we established our baseline and made further improvements to the training pipeline.
 
 ![image](https://user-images.githubusercontent.com/58615742/202171337-07520278-0f0b-40b9-83f7-f9eeba019891.png)
 
+`Data Augmentation` is adopted by keeping labels on different language training datasets and mutual translation in the `data preprocessing stage`. `Bert`, `RoBERTa`, `XLM-RoBERTa` models are used in the `pre-training` stage, `bidirectional LSTM attn`, `TextCNN`, `MultiHead Attn` models are utilized in the `classifier`, and the `Loss function` is improved on the basis of the `Uniform weights` in the [original paper](https://aclanthology.org/2021.nlp4if-1.16.pdf). Finally, we propose a voting mechanism. There are two schemes: `All vote` and `Top6 vote`.
 
+After the attempt and optimization, taking Mean F1 Core as the standard, we trained 12 models, some of which far surpassed the best average F1-score of `89.7%` in [Fighting the COVID-19 Infodemic with a Holistic BERT Ensemble](https://aclanthology.org/2021.nlp4if-1.18.pdf), including Roberta-lstm-attn (`91.38%`), xlmRoberta-lstm-attn (`91.09%`), xlmRoberta-lstm-attn-biasedWeight (`90.67%`), xlmRoberta-multihead (`90.49%`), etc., optimized the training result by adopting voting mechanism and reached an ultimate best-vote of `93.54%`.
