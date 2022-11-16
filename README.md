@@ -23,6 +23,20 @@ Inspired by the design and ideas in [Multi Output Learning using Task Wise Atten
 
 ![image](https://user-images.githubusercontent.com/58615742/202171337-07520278-0f0b-40b9-83f7-f9eeba019891.png)
 
-`Data Augmentation` is adopted by keeping labels on different language training datasets and mutual translation in the `data preprocessing stage`. `Bert`, `RoBERTa`, `XLM-RoBERTa` models are used in the `pre-training` stage, `bidirectional LSTM attn`, `TextCNN`, `MultiHead Attn` models are utilized in the `classifier`, and the `Loss function` is improved on the basis of the `Uniform weights` in the [original paper](https://aclanthology.org/2021.nlp4if-1.16.pdf). Finally, we propose a voting mechanism. There are two schemes: `All vote` and `Top6 vote`.
+`Data Augmentation` is adopted by keeping labels on different language training datasets and mutual translation in the `data preprocessing stage`. 
+![image](https://user-images.githubusercontent.com/58615742/202177576-5255e6b5-2b37-456c-bfb2-00a80acd9a94.png)
+
+`Bert`, `RoBERTa`, `XLM-RoBERTa` models are used in the `pre-training` stage.
+![image](https://user-images.githubusercontent.com/58615742/202177768-3c13270f-bd42-4b20-b9d1-d49587e253fe.png)
+
+`BiLSTM+Attn`, `TextCNN`, `MultiHead Attn` models are utilized in the `classifier`.
+![image](https://user-images.githubusercontent.com/58615742/202178039-d5565820-be38-4216-b63a-9e2011ae5cec.png)
+
+![image](https://user-images.githubusercontent.com/58615742/202178291-837c3a99-8626-4e54-8450-05fd53cd232a.png)
+
+![image](https://user-images.githubusercontent.com/58615742/202178361-07554039-b48e-4bfb-83bb-342caaa9ce71.png)
+
+
+`Loss function` is improved on the basis of the `Uniform weights` in the [original paper](https://aclanthology.org/2021.nlp4if-1.16.pdf). Finally, we propose a voting mechanism. There are two schemes: `All vote` and `Top6 vote`.
 
 After the attempt and optimization, taking Mean F1 Core as the standard, we trained 12 models, some of which far surpassed the best average F1-score of `89.7%` in [Fighting the COVID-19 Infodemic with a Holistic BERT Ensemble](https://aclanthology.org/2021.nlp4if-1.18.pdf), including Roberta-lstm-attn (`91.38%`), xlmRoberta-lstm-attn (`91.09%`), xlmRoberta-lstm-attn-biasedWeight (`90.67%`), xlmRoberta-multihead (`90.49%`), etc., optimized the training result by adopting voting mechanism and reached an ultimate best-vote of `93.54%`.
