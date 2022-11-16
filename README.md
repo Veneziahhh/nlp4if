@@ -31,6 +31,6 @@ Because it is the real comment on Twitter, it inevitably contains emoji and URL,
 
 ² Trained 12 models that far surpass the best average F1-score of 89.7%, including Roberta-lstm-attn (91.38%), xlmRoberta-lstm-attn (91.09%), xlmRoberta-lstm-attn-biasedWeight (90.67%), xlmRoberta-multihead (90.49%), etc., optimized the training result by adopting voting mechanism and reached an ultimate best-vote of 93.54%
 
-![image](https://user-images.githubusercontent.com/58615742/202171171-34b86831-3dd8-4ee6-a4da-e87c3f1f09a5.png)
+![image](https://user-images.githubusercontent.com/58615742/202171337-07520278-0f0b-40b9-83f7-f9eeba019891.png)
 
 
